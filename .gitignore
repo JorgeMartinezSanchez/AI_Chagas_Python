@@ -1,0 +1,14 @@
+*.png
+*.pdf
+*.jpg
+*.txt
+
+real_val_datasets/
+training_datasets/
+validation_datasets/
+splitted-video/
+splitted-video-2/
+splitted-video-3/
+splitted-video-4/
+splitted-video-5/
+tablas/
