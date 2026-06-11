@@ -73,7 +73,7 @@ class ImageNN(nn.Module):
             nn.Flatten(),
             nn.Linear(256 * 4 * 4, 128),
             nn.ReLU(),
-            nn.Dropout(0.5),
+            nn.Dropout(0.6),
             nn.Linear(128, 2)
         )
 
@@ -83,7 +83,6 @@ class ImageNN(nn.Module):
         return x
 
 model = ImageNN().to(DEVICE)
-
 
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 loss_fn = nn.CrossEntropyLoss()
@@ -148,7 +147,7 @@ with torch.no_grad():
     for batch_X, batch_y in val_loader:
         batch_X = batch_X.to(DEVICE)
         output  = model(batch_X)
-        probs   = torch.softmax(output, dim=1)[:, 1]
+        probs   = torch.softmax(output, dim=1)[:, 0]
         _, preds = torch.max(output, 1)
         all_probs.extend(probs.cpu().numpy())
         all_preds.extend(preds.cpu().numpy())

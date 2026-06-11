@@ -118,7 +118,6 @@ class ChagasDetectorApp:
                                             text_color="gray")
         self.confidence_label.pack(pady=(0, 20))
         
-        # Frame para probabilidades
         probs_frame = ctk.CTkFrame(right_frame, corner_radius=15)
         probs_frame.pack(fill="both", expand=True, padx=20, pady=10)
         

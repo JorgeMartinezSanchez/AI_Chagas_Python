@@ -2,6 +2,7 @@
 *.pdf
 *.jpg
 *.txt
+*.zip
 
 real_val_datasets/
 training_datasets/
